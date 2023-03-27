@@ -1,0 +1,26 @@
+package com.example.recycleview;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+    public String[]arr={"iteam0","iteam1","iteam2","iteam3","iteam4","iteam5","iteam6","iteam7",
+            "iteam8","iteam9","iteam10","iteam11","iteam12","iteam13"};
+    public RecyclerView recyclerView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        recyclerView=findViewById(R.id.recyclerView);
+        CustomAdapter ca=new CustomAdapter(arr);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //set the layout maneger for the recycler view which layout we want to give
+        recyclerView.setAdapter(ca);
+
+
+
+    }
+}
